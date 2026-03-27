@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Calculator</title>
+
+<style>
+body {
+	font-family: "Segoe UI", Arial, sans-serif;
+	background: linear-gradient(135deg, #4C8BF5, #6DD5FA);
+	height: 100vh;
+	margin: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.calc-container {
+	background: #ffffff;
+	width: 350px;
+	padding: 30px;
+	border-radius: 15px;
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+	text-align: center;
+}
+
+h1 {
+	margin-bottom: 20px;
+	color: #333333;
+}
+
+input[type="text"] {
+	width: 90%;
+	padding: 12px;
+	margin: 10px 0;
+	border: 1px solid #cccccc;
+	border-radius: 8px;
+	font-size: 16px;
+	text-align: center;
+	transition: 0.2s;
+}
+
+input[type="text"]:focus {
+	border-color: #4C8BF5;
+	outline: none;
+	box-shadow: 0 0 5px rgba(76, 139, 245, 0.5);
+}
+
+button {
+	width: 45%;
+	padding: 12px;
+	margin: 8px 5px;
+	border: none;
+	border-radius: 8px;
+	font-size: 16px;
+	cursor: pointer;
+	background: #4C8BF5;
+	color: white;
+	transition: 0.2s;
+}
+
+button:hover {
+	background: #3b73d1;
+}
+
+.result-box {
+	width: 90%;
+	padding: 14px;
+	font-size: 18px;
+	border: 1px solid #4C8BF5;
+	border-radius: 8px;
+	margin-top: 20px;
+	background: #f0f7ff;
+	color: #333;
+}
+</style>
+</head>
+
+<body>
+	<div class="calc-container">
+		<h1>Calculator</h1>
+		<form>
+			<input type="text" name="num1" placeholder="Enter First Number" th:value="${x}"> 
+			<input type="text" name="num2" placeholder="Enter Second Number" th:value="${y}">
+			<button formaction="add">Add</button>
+			<button formaction="subtract">Subtract</button>
+			<button formaction="multiply">Multiply</button>
+			<button formaction="divide">Divide</button>
+		</form>
+		<input class="result-box" type="text" th:value="${result}" readonly>
+	</div>
+</body>
+</html>
